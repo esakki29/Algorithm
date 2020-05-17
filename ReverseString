@@ -1,0 +1,11 @@
+var reverseString = function(s) {
+    var n = s.length; //length of the string
+    var j =n-1;
+    for(var i=0;i<n-1;i++){//looping overa string
+        if( j<=i) break; //break if j less than equal to i
+        [s[j],s[i]] =[s[i],s[j]];  //swap i & j sing destructing
+        j--; //decrement j            
+    }
+    return s; //return reversed string
+};
+reverseString(["H","a","n","n","a","h"])
