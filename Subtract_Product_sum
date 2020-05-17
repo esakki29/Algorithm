@@ -1,0 +1,12 @@
+var subtractProductAndSum = function(n) {
+    var mul =1;
+    var sum=0;
+    while( n>1){ //loop over number of digits
+        mul *= n % 10;
+        sum +=n%10;
+        n = parseInt(n/10);
+    }
+    return mul - sum; //return product - sum
+};
+
+subtractProductAndSum(4421)
