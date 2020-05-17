@@ -1,0 +1,16 @@
+var findAnagrams = function(s, p) {
+    var hashTable=new Array(26).fill(0);
+    var result=[];
+    var y=0;
+    for(var i=0;i<p.length;i++){
+        hashTable[p[i].charCodeAt() - 97]++;
+    }
+    for( var x=0;x<s.length;x++){
+        hashTable[s[x].charCodeAt() - 97]--;
+        while(hashTable[s[x].charCodeAt() -97] < 0){
+            hashTable[s[y++].charCodeAt() - 97]++;
+        }
+        if(x-y+1 === p.length) result.push(y)
+    }
+    return result;
+};
