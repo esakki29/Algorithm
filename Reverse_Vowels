@@ -1,0 +1,29 @@
+/* Reverse vowels grom given string using two pointers 
+  Example 1:
+
+  Input: "hello"
+  Output: "holle"
+  Example 2:
+
+  Input: "leetcode"
+  Output: "leotcede"
+*/
+var reverseVowels = function(s) {
+    if(s.length ===0) return s;
+    let regex = /[aeiou]/i;
+    var arr = s.split('');
+    var i=0;
+    var j = s.length -1;    
+    while( i < j){
+          if(regex.test(arr[i]) && regex.test(arr[j])){
+              var temp =arr[i];
+              arr[i] = arr[j];
+              arr[j] = temp;
+              i++;
+              j--;
+          }
+        if(!regex.test(arr[i])) i++;
+        if(!regex.test(arr[j])) j--;
+    }
+    return arr.join('')
+};
