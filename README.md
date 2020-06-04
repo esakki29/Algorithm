@@ -1,2 +1,2 @@
 # Algorithm
-Data structure and Algorithm
+Data structure and Algorithm using Vanila JS
