@@ -1,0 +1,24 @@
+/*Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase without using predefind method 
+
+Example 1:
+
+Input: "Hello"
+Output: "hello"
+Example 2:
+
+Input: "here"
+Output: "here"
+Example 3:
+
+Input: "LOVELY"
+Output: "lovely"*/
+var toLowerCase = function(str) {
+  let output ='';    
+    for(let i=0;i<str.length;i++){
+        var codeNum = str[i].charCodeAt();
+        if(codeNum >=65 && codeNum <=90) output += String.fromCharCode(codeNum + 32);
+        else output +=str[i]
+    }
+    return output;
+
+};
