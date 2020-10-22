@@ -1,21 +1,20 @@
 /*104. Maximum Depth of Binary Tree
-Given a binary tree, find its minimum depth.
+Given a binary tree, find its maximum depth.
 
-The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
 
 Note: A leaf is a node with no children.
 
- 
+Example:
 
-Example 1:
+Given binary tree [3,9,20,null,null,15,7],
 
-
-Input: root = [3,9,20,null,null,15,7]
-Output: 2
-Example 2:
-
-Input: root = [2,null,3,null,4,null,5,null,6]
-Output: 5
+    3
+   / \
+  9  20
+    /  \
+   15   7
+return its depth = 3.
 */
 //Recursive
 
