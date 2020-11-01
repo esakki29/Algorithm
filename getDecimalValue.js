@@ -30,13 +30,7 @@ Output: 0
 
 */
 
-var getDecimalValue = function(head) {
-    
-    let res=0;
-    while(head){
-        res = res *2 + head.val;
-        head = head.next
-    }
-    return res;
+var getDecimalValue = function(head, res=0) {
+    return head ? getDecimalValue(head.next, res*2 + head.val): res;
     
 };
