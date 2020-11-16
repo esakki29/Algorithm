@@ -1,0 +1,48 @@
+/*938. Range Sum of BST - javascript solution)
+Given the root node of a binary search tree, return the sum of values of all nodes with a value in the range [low, high].
+
+ 
+
+Example 1:
+
+
+Input: root = [10,5,15,3,7,null,18], low = 7, high = 15
+Output: 32
+Example 2:
+
+
+Input: root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10
+Output: 23
+ 
+
+Constraints:
+
+The number of nodes in the tree is in the range [1, 2 * 104].
+1 <= Node.val <= 105
+1 <= low <= high <= 105
+All Node.val are unique.
+*/
+solution 1:
+var rangeSumBST = function(root,l,h){
+   let result =0;
+    dfs(root);
+    return result;
+    function dfs(root){
+    //return 0 if root doesn't have value
+        if(root == null) return 0;
+        //add root value with result when root.val belong to low & high
+        if(root.val >=l && root.val <=h) result +=root.val;
+        //pass root.left as root and call recursively if root.val greater than low
+        if(root.val > l) dfs(root.left)
+        //pass root.right as root and call recursively if root.val less than right
+        if(root.val < h) dfs(root.right)
+    }
+}
+solution 2:
+var rangeSumBST = function(root, low, high) { 
+    
+    if(root == null) return 0;
+    if(root.val < low) return rangeSumBST(root.right, low,high)
+    if(root.val > high) return rangeSumBST(root.left, low,high);
+    return root.val + rangeSumBST(root.left, low, high) + rangeSumBST(root.right,low,high)
+};
