@@ -25,7 +25,7 @@ Constraints:
 1 <= time.length <= 6 * 104
 1 <= time[i] <= 500
 */
-
+//Brute force algo
 var numPairsDivisibleBy60 = function(time) {
     let i=0,j=1, count=0,N=time.length;
     while(i< N && j<N){
@@ -36,4 +36,16 @@ var numPairsDivisibleBy60 = function(time) {
         j++;
     }
     return count;
+};
+//Mod of operation(get remainder
+const numPairsDivisibleBy60 = (time) => {
+    const appearDic = {};
+    let ans = 0;
+    time.forEach(el => {
+        const mod = el % 60;
+        const left = (60 - mod) % 60;
+        ans += appearDic[left] ? appearDic[left] : 0;
+        appearDic[mod] = appearDic[mod] ? appearDic[mod] + 1 : 1;
+    });
+    return ans;
 };
